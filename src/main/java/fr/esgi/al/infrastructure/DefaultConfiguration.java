@@ -43,8 +43,8 @@ public class DefaultConfiguration {
     public QueryBus queryBus() {
         final Map<Class<? extends Query>, QueryHandler> queryHandlerMap = new HashMap<>();
         queryHandlerMap.put(RetrieveUsers.class, new RetrieveUsersHandler(userConfiguration().userRepository()));
-        queryHandlerMap.put(RetrieveTradesmanPayments.class, new RetrieveTradesmanPaymentsHandler(tradesmanPaymentConfiguration().tradesmanPaymentRepository(), eventEventDispatcher()));
-        queryHandlerMap.put(RetrieveTradesmanPaymentByTradesmanId.class, new RetrieveTradesmanPaymentByTradesmanIdHandler(tradesmanPaymentConfiguration().tradesmanPaymentRepository()));
+        queryHandlerMap.put(RetrieveTradesmanPayments.class, new RetrieveTradesmanPaymentsQueryHandler(tradesmanPaymentConfiguration().tradesmanPaymentRepository(), eventEventDispatcher()));
+        queryHandlerMap.put(RetrieveTradesmanPaymentByTradesmanId.class, new RetrieveTradesmanPaymentByTradesmanIdQueryHandler(tradesmanPaymentConfiguration().tradesmanPaymentRepository()));
         return new SimpleQueryBus(queryHandlerMap);
     }
 }

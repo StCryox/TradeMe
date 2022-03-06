@@ -42,4 +42,15 @@ public class TradesmanPayment implements Entity<TradesmanPaymentId> {
     public TradesmanPaymentId id() {
         return tradesmanPaymentId;
     }
+
+    @Override
+    public String toString() {
+        return "TradesmanPayment{" +
+                "tradesmanPaymentId=" + tradesmanPaymentId +
+                ", tradesmanId=" + tradesmanId +
+                ", price=" + price +
+                ", paymentGateway=" + paymentGateway +
+                ", paymentStrategy=" + paymentStrategy +
+                '}';
+    }
 }

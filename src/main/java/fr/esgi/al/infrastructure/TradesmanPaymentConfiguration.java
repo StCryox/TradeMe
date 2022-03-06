@@ -29,12 +29,12 @@ public class TradesmanPaymentConfiguration {
     }
 
     @Bean
-    public RetrieveTradesmanPaymentsHandler retrieveTradesmanPayment() {
-        return new RetrieveTradesmanPaymentsHandler(tradesmanPaymentRepository(), defaultConfiguration().eventEventDispatcher());
+    public RetrieveTradesmanPaymentsQueryHandler retrieveTradesmanPayment() {
+        return new RetrieveTradesmanPaymentsQueryHandler(tradesmanPaymentRepository(), defaultConfiguration().eventEventDispatcher());
     }
 
     @Bean
-    public RetrieveTradesmanPaymentByTradesmanIdHandler retrieveTradesmanPaymentByTradesmanId() {
-        return new RetrieveTradesmanPaymentByTradesmanIdHandler(tradesmanPaymentRepository());
+    public RetrieveTradesmanPaymentByTradesmanIdQueryHandler retrieveTradesmanPaymentByTradesmanId() {
+        return new RetrieveTradesmanPaymentByTradesmanIdQueryHandler(tradesmanPaymentRepository());
     }
 }

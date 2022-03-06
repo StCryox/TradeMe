@@ -1,6 +1,5 @@
 package fr.esgi.al.domain.MarketplaceAPI.PayTradesman.application;
 
-import fr.esgi.al.domain.MarketplaceAPI.AddMember.domain.Address;
 import fr.esgi.al.domain.MarketplaceAPI.AddMember.domain.UserId;
 import fr.esgi.al.domain.MarketplaceAPI.PayTradesman.domain.PaymentGateway;
 import fr.esgi.al.domain.MarketplaceAPI.PayTradesman.domain.PaymentStrategy;

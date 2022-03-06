@@ -6,11 +6,11 @@ import fr.esgi.al.kernel.QueryHandler;
 
 import java.util.List;
 
-public class RetrieveTradesmanPaymentByTradesmanIdHandler implements QueryHandler<RetrieveTradesmanPaymentByTradesmanId, List<TradesmanPayment>> {
+public class RetrieveTradesmanPaymentByTradesmanIdQueryHandler implements QueryHandler<RetrieveTradesmanPaymentByTradesmanId, List<TradesmanPayment>> {
 
     private final TradesmanPaymentRepository tradesmanPaymentRepository;
 
-    public RetrieveTradesmanPaymentByTradesmanIdHandler(TradesmanPaymentRepository tradesmanPaymentRepository) {
+    public RetrieveTradesmanPaymentByTradesmanIdQueryHandler(TradesmanPaymentRepository tradesmanPaymentRepository) {
         this.tradesmanPaymentRepository = tradesmanPaymentRepository;
     }
 

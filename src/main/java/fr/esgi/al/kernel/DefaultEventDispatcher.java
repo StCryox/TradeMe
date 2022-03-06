@@ -1,8 +1,4 @@
-package fr.esgi.al.infrastructure;
-
-import fr.esgi.al.kernel.Event;
-import fr.esgi.al.kernel.EventDispatcher;
-import fr.esgi.al.kernel.EventListener;
+package fr.esgi.al.kernel;
 
 import java.util.List;
 import java.util.Map;
