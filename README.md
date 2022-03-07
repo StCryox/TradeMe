@@ -13,8 +13,8 @@ ESGI - 4AL3 Semestre 1 Architecture Logicielle Exam TradeMe api with different u
     - PayTradesman
 
 ## Hexagonal architecture with different design pattern
-    - CQRS
+    - CQS
     - Event Bus
     - Repository
-    - 
+    - Application Event
 
