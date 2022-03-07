@@ -4,6 +4,8 @@ import fr.esgi.al.domain.ContractorAPI.ContractorManager;
 import fr.esgi.al.domain.MarketplaceAPI.AddMember.application.*;
 import fr.esgi.al.domain.MarketplaceAPI.MarketManager;
 import fr.esgi.al.domain.MarketplaceAPI.PayTradesman.application.*;
+import fr.esgi.al.domain.TradesmanAPI.AssignTradesman.application.CreateAssignTradesman;
+import fr.esgi.al.domain.TradesmanAPI.AssignTradesman.application.CreateAssignTradesmanCommandHandler;
 import fr.esgi.al.domain.TradesmanAPI.MatchTradesman.application.*;
 import fr.esgi.al.domain.TradesmanAPI.RequestTradesman.application.RequestTradesmanQueryHandler;
 import fr.esgi.al.domain.TradesmanAPI.RequestTradesman.application.RequestTradesman;
@@ -34,6 +36,10 @@ public class DefaultConfiguration {
         return new MatchTradesmanConfiguration();
     }
 
+    public AssignTradesmanConfiguration assignTradesmanConfiguration() {
+        return new AssignTradesmanConfiguration();
+    }
+
     public MarketManager marketManager() {
         return new MarketManager(userConfiguration().userRepository());
     }
@@ -56,6 +62,7 @@ public class DefaultConfiguration {
         commandHandlerMap.put(CreateUser.class, new CreateUserCommandHandler(userConfiguration().userRepository(), eventEventDispatcher()));
         commandHandlerMap.put(CreateTradesmanPayment.class, new CreateTradesmanPaymentCommandHandler(tradesmanPaymentConfiguration().tradesmanPaymentRepository(), eventEventDispatcher(), tradesmanPaymentConfiguration().tradesmanPaymentService()));
         commandHandlerMap.put(CreateMatchTradesman.class, new CreateMatchTradesmanCommandHandler(matchTradesmanConfiguration().matchTradesmanRepository(), matchTradesmanConfiguration().matchTradesmanService(), eventEventDispatcher()));
+        commandHandlerMap.put(CreateAssignTradesman.class, new CreateAssignTradesmanCommandHandler(assignTradesmanConfiguration().assignTradesmanService(), eventEventDispatcher()));
         return new SimpleCommandBus(commandHandlerMap);
     }
 
