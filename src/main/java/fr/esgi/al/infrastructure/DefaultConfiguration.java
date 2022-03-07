@@ -9,6 +9,7 @@ import fr.esgi.al.domain.TradesmanAPI.AssignTradesman.application.CreateAssignTr
 import fr.esgi.al.domain.TradesmanAPI.MatchTradesman.application.*;
 import fr.esgi.al.domain.TradesmanAPI.RequestTradesman.application.RequestTradesmanQueryHandler;
 import fr.esgi.al.domain.TradesmanAPI.RequestTradesman.application.RequestTradesman;
+import fr.esgi.al.domain.TradesmanAPI.TradesmanManager;
 import fr.esgi.al.kernel.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -46,6 +47,11 @@ public class DefaultConfiguration {
 
     public ContractorManager contractorManager() {
         return new ContractorManager();
+    }
+
+    @Bean
+    public TradesmanManager tradesmanManager() {
+        return new TradesmanManager(queryBus(), commandBus());
     }
 
     @Bean
