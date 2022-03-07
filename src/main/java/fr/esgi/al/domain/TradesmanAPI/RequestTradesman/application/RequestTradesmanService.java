@@ -5,15 +5,15 @@ import fr.esgi.al.domain.MarketplaceAPI.MarketManager;
 
 import java.util.List;
 
-public class RequestTradesmansService {
+public class RequestTradesmanService {
     private MarketManager marketManager;
 
-    public RequestTradesmansService(MarketManager marketManager) {
+    public RequestTradesmanService(MarketManager marketManager) {
         this.marketManager = marketManager;
     }
 
-    public List<User> findTradesmans() {
-        return marketManager.getAllTrademans();
+    public List<User> findTradesman() {
+        return marketManager.getAllTrademan();
     }
 
 }

@@ -1,4 +1,4 @@
-package fr.esgi.al.domain.TradesmanAPI.MatchTradesman;
+package fr.esgi.al.domain.TradesmanAPI.AssignTradesman.domain;
 
 import fr.esgi.al.kernel.Date;
 

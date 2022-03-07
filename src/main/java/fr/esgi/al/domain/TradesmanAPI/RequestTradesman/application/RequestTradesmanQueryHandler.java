@@ -5,17 +5,17 @@ import fr.esgi.al.kernel.QueryHandler;
 
 import java.util.List;
 
-public class RequestTradesmanQueryHandler implements QueryHandler<RequestTradesmans, List<User>> {
+public class RequestTradesmanQueryHandler implements QueryHandler<RequestTradesman, List<User>> {
 
-    private final RequestTradesmansService requestTradesmansService;
+    private final RequestTradesmanService requestTradesmanService;
 
-    public RequestTradesmanQueryHandler(RequestTradesmansService requestTradesmansService) {
-        this.requestTradesmansService = requestTradesmansService;
+    public RequestTradesmanQueryHandler(RequestTradesmanService requestTradesmanService) {
+        this.requestTradesmanService = requestTradesmanService;
     }
 
     @Override
-    public List<User> handle(RequestTradesmans requestTradesmans) {
+    public List<User> handle(RequestTradesman requestTradesman) {
         System.out.println("RequestTradesmans Handler called");
-        return requestTradesmansService.findTradesmans();
+        return requestTradesmanService.findTradesman();
     }
 }

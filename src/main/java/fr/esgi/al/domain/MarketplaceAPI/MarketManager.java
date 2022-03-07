@@ -13,7 +13,7 @@ public class MarketManager {
         this.userRepository = userRepository;
     }
 
-    public List<User> getAllTrademans() {
+    public List<User> getAllTrademan() {
         return userRepository.findByRole(Role.TRADESMAN);
     }
 }

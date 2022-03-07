@@ -4,7 +4,7 @@ import fr.esgi.al.domain.MarketplaceAPI.AddMember.domain.User;
 import fr.esgi.al.domain.MarketplaceAPI.AddMember.exposition.AddressResponse;
 import fr.esgi.al.domain.MarketplaceAPI.AddMember.exposition.UserResponse;
 import fr.esgi.al.domain.MarketplaceAPI.AddMember.exposition.UsersResponse;
-import fr.esgi.al.domain.TradesmanAPI.RequestTradesman.application.RequestTradesmans;
+import fr.esgi.al.domain.TradesmanAPI.RequestTradesman.application.RequestTradesman;
 import fr.esgi.al.kernel.ExpositionErrorHandler;
 import fr.esgi.al.kernel.QueryBus;
 import org.springframework.http.HttpStatus;
@@ -28,7 +28,7 @@ public class RequestTradesmanController {
 
     @GetMapping(path = "/tradesmans/find", produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<UsersResponse> getAllTradesmans() {
-        final List<User> users = queryBus.send(new RequestTradesmans());
+        final List<User> users = queryBus.send(new RequestTradesman());
         UsersResponse usersResponseResult = new UsersResponse(users.stream().map
                 (user ->
                         new UserResponse(
@@ -41,7 +41,6 @@ public class RequestTradesmanController {
                 ).collect(Collectors.toList()));
         return ResponseEntity.ok(usersResponseResult);
     }
-
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)

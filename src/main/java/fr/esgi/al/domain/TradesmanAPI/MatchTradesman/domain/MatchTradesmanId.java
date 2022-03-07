@@ -1,13 +1,13 @@
-package fr.esgi.al.domain.TradesmanAPI.RequestTradesman.domain;
+package fr.esgi.al.domain.TradesmanAPI.MatchTradesman.domain;
 
 import fr.esgi.al.kernel.ValueObjectID;
 
 import java.util.Objects;
 
-public class RequestTradesmanId implements ValueObjectID {
+public class MatchTradesmanId implements ValueObjectID {
     private final int value;
 
-    public RequestTradesmanId(int value) {
+    public MatchTradesmanId(int value) {
         this.value = value;
     }
 
@@ -19,8 +19,8 @@ public class RequestTradesmanId implements ValueObjectID {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        RequestTradesmanId that = (RequestTradesmanId) o;
-        return value == that.value;
+        MatchTradesmanId matchTradesmanId = (MatchTradesmanId) o;
+        return value == matchTradesmanId.value;
     }
 
     @Override
@@ -30,6 +30,6 @@ public class RequestTradesmanId implements ValueObjectID {
 
     @Override
     public String toString() {
-        return "TradesmanRequestId: " + value;
+        return "MatchTradesmanId: " + value;
     }
 }
