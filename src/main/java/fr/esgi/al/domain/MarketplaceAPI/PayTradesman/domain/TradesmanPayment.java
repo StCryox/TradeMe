@@ -2,6 +2,7 @@ package fr.esgi.al.domain.MarketplaceAPI.PayTradesman.domain;
 
 import fr.esgi.al.domain.MarketplaceAPI.AddMember.domain.UserId;
 import fr.esgi.al.kernel.Entity;
+import fr.esgi.al.kernel.Price;
 
 public class TradesmanPayment implements Entity<TradesmanPaymentId> {
     private TradesmanPaymentId tradesmanPaymentId;

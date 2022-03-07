@@ -25,17 +25,12 @@ public class UserConfiguration {
     }
 
     @Bean
-    public ModifyUserAddressCommandHandler modifyUserAddressCommandHandler() {
-        return new ModifyUserAddressCommandHandler(userRepository(), defaultConfiguration().eventEventDispatcher());
-    }
-
-    @Bean
     public RetrieveUsersHandler retrieveUsersHandler() {
         return new RetrieveUsersHandler(userRepository());
     }
 
     @Bean
-    public RetrieveUsersByCityHandler retrieveUsersByCityHandler() {
-        return new RetrieveUsersByCityHandler(userRepository());
+    public RetrieveUsersByRoleHandler retrieveUsersByRoleHandler() {
+        return new RetrieveUsersByRoleHandler(userRepository());
     }
 }

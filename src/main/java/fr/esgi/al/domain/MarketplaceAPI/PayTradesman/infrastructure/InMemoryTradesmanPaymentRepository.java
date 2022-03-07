@@ -3,6 +3,7 @@ package fr.esgi.al.domain.MarketplaceAPI.PayTradesman.infrastructure;
 import fr.esgi.al.domain.MarketplaceAPI.AddMember.domain.UserId;
 import fr.esgi.al.domain.MarketplaceAPI.PayTradesman.domain.*;
 import fr.esgi.al.kernel.NoSuchEntityException;
+import fr.esgi.al.kernel.Price;
 
 import java.util.List;
 import java.util.Map;
@@ -14,7 +15,7 @@ public final class InMemoryTradesmanPaymentRepository implements TradesmanPaymen
 
     private final AtomicInteger count = new AtomicInteger(0);
 
-    private Map<TradesmanPaymentId, TradesmanPayment> data = new ConcurrentHashMap<>();
+    private final Map<TradesmanPaymentId, TradesmanPayment> data = new ConcurrentHashMap<>();
 
     @Override
     public void add(TradesmanPayment tradesmanPayment) {
@@ -35,7 +36,7 @@ public final class InMemoryTradesmanPaymentRepository implements TradesmanPaymen
     @Override
     public List<TradesmanPayment> findAll() {
         System.out.println("\nInMemoryTradesmanPaymentRepository findAll function");
-        System.out.println("Date before manually adding");
+        System.out.println("Data before manually adding");
         System.out.println(data.values());
         TradesmanPayment tradesmanPayment = new TradesmanPayment(
                 new TradesmanPaymentId(5),

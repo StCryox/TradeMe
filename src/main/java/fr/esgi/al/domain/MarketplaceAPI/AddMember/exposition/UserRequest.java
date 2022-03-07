@@ -14,5 +14,10 @@ public class UserRequest {
     public String firstname;
 
     @NotNull
+    @NotBlank
+    public String role;
+
+
+    @NotNull
     public AddressRequest address;
 }

@@ -1,4 +1,6 @@
-package fr.esgi.al.domain.MarketplaceAPI.PayTradesman.domain;
+package fr.esgi.al.kernel;
+
+import fr.esgi.al.domain.MarketplaceAPI.PayTradesman.domain.Currency;
 
 public class Price {
     private final double price;

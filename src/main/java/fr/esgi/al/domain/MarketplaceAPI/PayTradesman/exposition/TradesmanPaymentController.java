@@ -6,6 +6,7 @@ import fr.esgi.al.domain.MarketplaceAPI.PayTradesman.application.RetrieveTradesm
 import fr.esgi.al.domain.MarketplaceAPI.PayTradesman.domain.*;
 import fr.esgi.al.kernel.CommandBus;
 import fr.esgi.al.kernel.ExpositionErrorHandler;
+import fr.esgi.al.kernel.Price;
 import fr.esgi.al.kernel.QueryBus;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

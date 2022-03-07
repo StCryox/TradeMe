@@ -1,9 +1,7 @@
 package fr.esgi.al.domain.MarketplaceAPI.AddMember.infrastructure;
 
+import fr.esgi.al.domain.MarketplaceAPI.AddMember.domain.*;
 import fr.esgi.al.kernel.NoSuchEntityException;
-import fr.esgi.al.domain.MarketplaceAPI.AddMember.domain.User;
-import fr.esgi.al.domain.MarketplaceAPI.AddMember.domain.UserId;
-import fr.esgi.al.domain.MarketplaceAPI.AddMember.domain.UserRepository;
 
 import java.util.List;
 import java.util.Map;
@@ -43,12 +41,44 @@ public final class InMemoryUserRepository implements UserRepository {
 
     @Override
     public List<User> findAll() {
+        System.out.println("\nInMemoryUserRepository findAll function");
+        addFakeData();
         return List.copyOf(data.values());
     }
 
     @Override
-    public List<User> findByCity(String city) {
+    public List<User> findByRole(Role role) {
+        System.out.println("\nInMemoryUserRepository findByRole function");
+        addFakeData();
         return List.copyOf(data.values().stream()
-                .filter(user -> user.getAddress().getCity().equals(city)).collect(Collectors.toList()));
+                .filter(user -> user.getRole().equals(role)).collect(Collectors.toList()));
+    }
+
+    private void addFakeData() {
+        System.out.println("Manually adding data");
+        User user1 = new User(
+                new UserId(1),
+                "Nguyen",
+                "Ifzas",
+                Role.TRADESMAN,
+                new Address("Romainville")
+        );
+        User user2 = new User(
+                new UserId(2),
+                "Benadjaoud",
+                "Wissam",
+                Role.TRADESMAN,
+                new Address("Paris")
+        );
+        User user3 = new User(
+                new UserId(3),
+                "Macron",
+                "Emmanuel",
+                Role.CONTRACTOR,
+                new Address("Contractor")
+        );
+        data.put(user1.getId(), user1);
+        data.put(user2.getId(), user2);
+        data.put(user3.getId(), user3);
     }
 }

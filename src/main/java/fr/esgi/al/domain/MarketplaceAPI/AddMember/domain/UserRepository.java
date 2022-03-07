@@ -7,5 +7,5 @@ import java.util.List;
 public interface UserRepository extends Repository<UserId, User> {
     List<User> findAll();
 
-    List<User> findByCity(String city);
+    List<User> findByRole(Role role);
 }

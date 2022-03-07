@@ -6,16 +6,16 @@ import fr.esgi.al.domain.MarketplaceAPI.AddMember.domain.UserRepository;
 
 import java.util.List;
 
-public class RetrieveUsersByCityHandler implements QueryHandler<RetrieveUsersByCity, List<User>> {
+public class RetrieveUsersByRoleHandler implements QueryHandler<RetrieveUsersByRole, List<User>> {
 
     private final UserRepository userRepository;
 
-    public RetrieveUsersByCityHandler(UserRepository userRepository) {
+    public RetrieveUsersByRoleHandler(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
     @Override
-    public List<User> handle(RetrieveUsersByCity query) {
-        return userRepository.findByCity(query.city);
+    public List<User> handle(RetrieveUsersByRole query) {
+        return userRepository.findByRole(query.role);
     }
 }

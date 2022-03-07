@@ -3,7 +3,7 @@ package fr.esgi.al.domain.MarketplaceAPI.PayTradesman.application;
 import fr.esgi.al.domain.MarketplaceAPI.AddMember.domain.UserId;
 import fr.esgi.al.domain.MarketplaceAPI.PayTradesman.domain.PaymentGateway;
 import fr.esgi.al.domain.MarketplaceAPI.PayTradesman.domain.PaymentStrategy;
-import fr.esgi.al.domain.MarketplaceAPI.PayTradesman.domain.Price;
+import fr.esgi.al.kernel.Price;
 import fr.esgi.al.kernel.Command;
 
 /**

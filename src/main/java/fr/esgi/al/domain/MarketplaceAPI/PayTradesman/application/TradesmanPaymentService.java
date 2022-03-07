@@ -2,6 +2,9 @@ package fr.esgi.al.domain.MarketplaceAPI.PayTradesman.application;
 
 import fr.esgi.al.domain.MarketplaceAPI.AddMember.domain.UserId;
 import fr.esgi.al.domain.MarketplaceAPI.PayTradesman.domain.*;
+import fr.esgi.al.domain.MarketplaceAPI.PayTradesman.domain.PaymentDate;
+import fr.esgi.al.kernel.Payment;
+import fr.esgi.al.kernel.Price;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -29,8 +32,8 @@ public class TradesmanPaymentService implements Payment<UserId> {
                 + " à  " + tradesmanId.toString()
                 + " de " + price.toString()
                 + " via " + paymentGateway
-                + " le " + Date.now()
-                + ".\nProchain paiement le " + Date.nextMonth()
+                + " le " + PaymentDate.now()
+                + ".\nProchain paiement le " + PaymentDate.nextMonth()
         );
         return new PaymentId(count.incrementAndGet());
     }
@@ -40,8 +43,8 @@ public class TradesmanPaymentService implements Payment<UserId> {
                 + " à  " + tradesmanId.toString()
                 + " de " + price.toString()
                 + " via " + paymentGateway
-                + " le " + Date.now()
-                + ".\nProchain paiement le " + Date.nextMonth()
+                + " le " + PaymentDate.now()
+                + ".\nProchain paiement le " + PaymentDate.nextMonth()
         );
         return new PaymentId(count.incrementAndGet());
     }
@@ -51,8 +54,8 @@ public class TradesmanPaymentService implements Payment<UserId> {
                 + " à  " + tradesmanId.toString()
                 + " de " + price.toString()
                 + " via " + paymentGateway
-                + " le " + Date.now()
-                + ".\nProchain paiement le " + Date.nextMonth()
+                + " le " + PaymentDate.now()
+                + ".\nProchain paiement le " + PaymentDate.nextMonth()
         );
         return new PaymentId(count.incrementAndGet());
     }
